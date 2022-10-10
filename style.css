@@ -1,0 +1,50 @@
+
+html {
+    background-color: cadetblue;
+
+}
+
+#game-intro {
+    text-align: center;
+    font-size: 60px;
+}
+
+
+.color-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.colorbox {
+    border-width: 10px;
+    border-color: black;
+    border-radius: 40%;
+    border-style: solid;
+    padding: 100px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+#red {
+    background-color: crimson;
+}
+
+#blue {
+    background-color: aqua;
+
+}
+
+#yellow {
+    background-color: darkorange;
+}
+
+#green {
+    background-color: chartreuse;
+}
