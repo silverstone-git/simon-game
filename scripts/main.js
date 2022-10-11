@@ -1,11 +1,26 @@
 game_intro = $("#game-intro");
 
-$(document).on("keypress", function() {
-    game_intro.html("0 / 1")
-    // fade animation for next random color event
+function randomColor() {
+    // function to run for a new random color, to increase the level
+
     var randomInt = parseInt(Math.random()*4);
     fadeInFadeOut($("#" + allColors[randomInt]));
+    var audio = new Audio("./sounds/" + allColors[randomInt] + ".mp3");
+    audio.play();
+
+    // chosen buttons array are the ones chosen by the computer, at random, which the user has to match
     chosenButtons.push(allColors[randomInt]);
+}
+
+
+$(document).on("keypress", function() {
+    game_intro.html("0 / 1")
+    randomColor();
+})
+
+game_intro.click(function() {
+    game_intro.html("0 / 1")
+    randomColor();
 })
 
 for(var $colorbox of $(".colorbox")) {
@@ -23,8 +38,6 @@ $(".colorbox").click(function() {
 
     myClickedButtons.push(this.id);
     fadeInFadeOut($("#" + this.id));
-    //console.log(myClickedButtons);
-    //console.log(chosenButtons);
 
 
     var getRand = false;
@@ -51,15 +64,9 @@ $(".colorbox").click(function() {
     }
 
     if(getRand) {
-        // fade animation for next random color event
-        var randomInt = parseInt(Math.random()*4);
-        // chosen buttons array are the ones chosen by the computer, at random, which the user has to match
-        chosenButtons.push(allColors[randomInt]);
-        //console.log(allColors[randomInt] + "appended to list");
+        // a delay to let the user read the level up sign and get prepared for next random color
         setTimeout(function() {
-            fadeInFadeOut($("#" + allColors[randomInt]));
-            var audio = new Audio("./sounds/" + allColors[randomInt] + ".mp3");
-            audio.play();
+            randomColor();
         }, 1000)
     }
 
