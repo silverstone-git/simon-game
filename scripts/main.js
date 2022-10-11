@@ -53,8 +53,9 @@ $(".colorbox").click(function() {
         // wrong color chosen case
         var audio = new Audio("./sounds/wrong.mp3");
         audio.play;
-        game_intro.html("You Lose, your score was " + chosenButtons.length);
+        game_intro.html("You Lose, your score was: " + chosenButtons.length + "<br> Click here or press a key to play again");
         myClickedButtons = [];
+        chosenButtons = [];
 
     } else {
         // in the middle of the level case, updates the status
