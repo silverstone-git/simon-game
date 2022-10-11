@@ -6,7 +6,8 @@ html {
 
 #game-intro {
     text-align: center;
-    font-size: 60px;
+    font-size: 200%;
+    font-family: 'Silkscreen', cursive;
 }
 
 
@@ -15,10 +16,9 @@ html {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    gap: 10%;
 
 }
 
@@ -27,10 +27,27 @@ html {
     border-color: black;
     border-radius: 40%;
     border-style: solid;
-    padding: 100px;
-    margin-top: 100px;
-    margin-left: 100px;
+    display: flex;
+    aspect-ratio: 1 / 1;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
     cursor: pointer;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@media only screen and (max-width: 600px){
+    .color-container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .colorbox {
+        width: 35%;
+    }
+    
 }
 
 #red {
